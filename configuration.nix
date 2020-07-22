@@ -57,5 +57,7 @@
   services.xserver.xkbVariant = "altgr-intl";
   services.xserver.xkbOptions = "caps:escape"; 
   services.xserver.autorun = false;
+  services.xserver.windowManager.exwm.enable = true;
+  
 }
 
