@@ -46,11 +46,16 @@
   environment.systemPackages = [pkgs.git
 				pkgs.vim
 				pkgs.emacs]; 
+
+  # Touchpad
+  services.xserver.libinput.enable = true;
+  services.xserver.libinput.tapping = false;
  
   # X11
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
   services.xserver.xkbOptions = "caps:escape"; 
+  services.xserver.autorun = false;
 }
 
