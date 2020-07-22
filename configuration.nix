@@ -49,8 +49,8 @@
  
   # X11
   services.xserver.enable = true;
-  services.xserver.layout = us;
-  services.xserver.xkbVariant = altgr-intl;
-  services.xserver.xkbOptions = caps:escape; 
+  services.xserver.layout = "us";
+  services.xserver.xkbVariant = "altgr-intl";
+  services.xserver.xkbOptions = "caps:escape"; 
 }
 
