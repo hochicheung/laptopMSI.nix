@@ -45,7 +45,8 @@
   # Packages
   environment.systemPackages = [pkgs.git
 				pkgs.vim
-				pkgs.emacs]; 
+				pkgs.emacs
+				pkgs.firefox]; 
 
   # Touchpad
   services.xserver.libinput.enable = true;
@@ -56,8 +57,8 @@
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
   services.xserver.xkbOptions = "caps:escape"; 
+
   services.xserver.autorun = false;
   services.xserver.windowManager.exwm.enable = true;
-  
 }
 
