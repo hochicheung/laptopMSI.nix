@@ -27,7 +27,7 @@
   users.users.samcheung = {
     isNormalUser = true;
     home = "/home/samcheung";
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = ["wheel" "networkmanager" "video"];
   };
 
   
