@@ -15,6 +15,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+	# Don't use swap unless ram is full
+	boot.kernel.sysctl = {
+  	"vm.swappiness" = 0;
+	};
+	services.fstrim.enable = true;
+
+	# Clean /tmp on boot
+	boot.cleanTmpDir = true;
+
 	# Time & Date
 	time.timeZone = "Europe/Stockholm";
 	services.localtime.enable = true;
@@ -38,6 +47,9 @@
 				pkgs.emacs
 				pkgs.keepassxc
 	]; 
+
+	# Nix garbage collector
+	nix.gc.automatic = true;
 
 	# X Window-manager
   services.xserver.autorun = false;
