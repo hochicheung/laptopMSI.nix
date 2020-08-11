@@ -27,5 +27,6 @@
 				pkgs.rclone
 				pkgs.python3
 				pkgs.discord
+				pkgs.mupdf
 	]; 
 }
