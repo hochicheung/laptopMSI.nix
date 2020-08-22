@@ -45,7 +45,6 @@
 				pkgs.git
 				pkgs.vim
 				pkgs.emacs
-				pkgs.keepassxc
 	]; 
 
 	# Nix garbage collector
@@ -54,7 +53,7 @@
 	# X Window-manager
   services.xserver.autorun = false;
   services.xserver.windowManager.exwm.enable = true;
-	services.xserver.desktopManager.xterm.enable = true;
+ 	services.xserver.desktopManager.xterm.enable = true;
 
 	system.autoUpgrade.enable = true;
 	system.autoUpgrade.allowReboot = true;
