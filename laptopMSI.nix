@@ -25,8 +25,8 @@
   environment.systemPackages = [
 				pkgs.qutebrowser
 				pkgs.rclone
-				pkgs.python3
 				pkgs.discord
 				pkgs.mupdf
+				pkgs.keepassxc
 	]; 
 }
