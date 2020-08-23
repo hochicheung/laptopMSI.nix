@@ -42,17 +42,8 @@
 	};
 	services.fstrim.enable = true;
 
-<<<<<<< HEAD
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  # networking.interfaces.enp3s0.useDHCP = true;
-  # networking.interfaces.wlp2s0.useDHCP = true;
-=======
 	# Clean /tmp on boot
 	boot.cleanTmpDir = true;
->>>>>>> github/master
 
 	# Time & Date
 	time.timeZone = "Europe/Stockholm";
@@ -77,21 +68,8 @@
 				pkgs.emacs
 	]; 
 
-<<<<<<< HEAD
-  # Touchpad
-  # services.xserver.libinput.enable = true;
-  # services.xserver.libinput.tapping = false;
- 
-  # X11
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "altgr-intl";
-  services.xserver.xkbOptions = "caps:escape"; 
-=======
 	# Nix garbage collector
 	nix.gc.automatic = true;
->>>>>>> github/master
 
 	# X Window-manager
   services.xserver.autorun = false;
