@@ -11,8 +11,29 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+			efiSysMountPoint = "/boot";
+		};
+		grub = {
+		  devices = [ "nodev" ];
+			efiSupport = true;
+			enable = true;
+			version = 2;
+			useOSProber = true;
+		};
+	};
+
+	# Os-Prober, dual booting
+	# boot.loader.grub.enable = true;
+	# boot.loader.grub.version = 2;
+	# boot.loader.grub.device = "/dev/sdb";
+
+  # Allow unfree, nvidia drivers
+  nixpkgs.config.allowUnfree = true;
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -21,8 +42,8 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.enp3s0.useDHCP = true;
-  networking.interfaces.wlp2s0.useDHCP = true;
+  # networking.interfaces.enp3s0.useDHCP = true;
+  # networking.interfaces.wlp2s0.useDHCP = true;
 
   # Networking
   networking.networkmanager.enable = true;
@@ -49,11 +70,12 @@
 				pkgs.firefox]; 
 
   # Touchpad
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.tapping = false;
+  # services.xserver.libinput.enable = true;
+  # services.xserver.libinput.tapping = false;
  
   # X11
   services.xserver.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "altgr-intl";
   services.xserver.xkbOptions = "caps:escape"; 
