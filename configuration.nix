@@ -33,9 +33,6 @@
 	# boot.loader.grub.version = 2;
 	# boot.loader.grub.device = "/dev/sdb";
 
-  # Allow unfree, nvidia drivers
-  nixpkgs.config.allowUnfree = true;
-
 	# Don't use swap unless ram is full
 	boot.kernel.sysctl = {
   	"vm.swappiness" = 0;
@@ -59,7 +56,6 @@
     home = "/home/samcheung";
     extraGroups = ["wheel" "networkmanager" "video"];
   };
-
   
   # Packages
   environment.systemPackages = [
