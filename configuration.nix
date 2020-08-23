@@ -8,7 +8,8 @@
   imports =
     [ 
       ./hardware-configuration.nix
-			./laptopMSI.nix
+			#./laptopMSI.nix
+			./motherBase.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
