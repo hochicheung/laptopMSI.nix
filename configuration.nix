@@ -69,7 +69,7 @@
 	nix.gc.automatic = true;
 
 	# X Window-manager
-  services.xserver.autorun = false;
+  services.xserver.autorun = true;
   services.xserver.windowManager.exwm.enable = true;
  	services.xserver.desktopManager.xterm.enable = true;
 
