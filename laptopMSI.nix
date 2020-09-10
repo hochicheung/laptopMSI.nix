@@ -21,12 +21,4 @@
 
 	# Allow Unfree
 	nixpkgs.config.allowUnfree = true;
-	
-  environment.systemPackages = [
-				pkgs.qutebrowser
-				pkgs.rclone
-				pkgs.discord
-				pkgs.mupdf
-				pkgs.keepassxc
-	]; 
 }

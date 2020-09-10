@@ -8,8 +8,8 @@
   imports =
     [ 
       ./hardware-configuration.nix
-			#./laptopMSI.nix
-			./motherBase.nix
+			./laptopMSI.nix
+			#./motherBase.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -75,7 +75,5 @@
 
 	system.autoUpgrade.enable = true;
 	system.autoUpgrade.allowReboot = true;
-
-  system.stateVersion = "20.03";
 }
 
