@@ -10,29 +10,8 @@
       ./hardware-configuration.nix
 			./laptopMSI.nix
 			#./motherBase.nix
+			<home-manager/nixos>
     ];
-
-  # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
-
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-			efiSysMountPoint = "/boot";
-		};
-		grub = {
-		  devices = [ "nodev" ];
-			efiSupport = true;
-			enable = true;
-			version = 2;
-			useOSProber = true;
-		};
-	};
-
-	# Os-Prober, dual booting
-	# boot.loader.grub.enable = true;
-	# boot.loader.grub.version = 2;
-	# boot.loader.grub.device = "/dev/sdb";
 
 	# Don't use swap unless ram is full
 	boot.kernel.sysctl = {
@@ -57,21 +36,14 @@
     home = "/home/samcheung";
     extraGroups = ["wheel" "networkmanager" "video"];
   };
-  
-  # Packages
-  environment.systemPackages = [
-				pkgs.git
-				pkgs.vim
-				pkgs.emacs
-	]; 
 
 	# Nix garbage collector
 	nix.gc.automatic = true;
 
 	# X Window-manager
-  services.xserver.autorun = true;
   services.xserver.windowManager.exwm.enable = true;
  	services.xserver.desktopManager.xterm.enable = true;
+  services.xserver.autorun = true;
 
 	system.autoUpgrade.enable = true;
 	system.autoUpgrade.allowReboot = true;
