@@ -6,9 +6,6 @@
 
   networking.hostName = "MSILaptop"; 
 
-  networking.interfaces.enp3s0.useDHCP = true;
-  networking.interfaces.wlp2s0.useDHCP = true;
-
   # Touchpad
   services.xserver.libinput.enable = true;
   services.xserver.libinput.tapping = true;

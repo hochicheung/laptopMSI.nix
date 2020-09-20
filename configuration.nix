@@ -28,7 +28,6 @@
   
   # Networking
   networking.networkmanager.enable = true;
-  networking.useDHCP = false;
 
   # User Management
   users.users.samcheung = {
