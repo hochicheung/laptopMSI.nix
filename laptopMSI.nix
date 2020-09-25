@@ -6,6 +6,9 @@
 
   networking.hostName = "MSILaptop"; 
 
+	# Backlight control
+	programs.light.enable = true;
+
   # Touchpad
   services.xserver.libinput.enable = true;
   services.xserver.libinput.tapping = true;
