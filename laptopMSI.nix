@@ -11,7 +11,7 @@
 
   # Touchpad
   services.xserver.libinput.enable = true;
-  services.xserver.libinput.tapping = false;
+  services.xserver.libinput.tapping = true;
 	services.xserver.libinput.disableWhileTyping = true;
  
   # X11
