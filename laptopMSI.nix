@@ -6,6 +6,19 @@
 
   networking.hostName = "MSILaptop"; 
 
+	# Allow Unfree
+	nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+		git	
+		qutebrowser
+		keepassxc
+		vim
+		emacs
+		light
+		syncthing
+	]; 
+
 	# Backlight control
 	programs.light.enable = true;
 
@@ -23,6 +36,11 @@
 	# Pulseaudio
 	hardware.pulseaudio.enable = true;
 
-	# Allow Unfree
-	nixpkgs.config.allowUnfree = true;
+	# Syncthing
+	services.syncthing = {
+	  enable = true;
+	  user = "samcheung";
+		dataDir = "~/Syncthing/"
+	};
+	
 }
