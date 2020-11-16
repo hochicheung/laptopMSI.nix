@@ -40,7 +40,7 @@
 	services.syncthing = {
 	  enable = true;
 	  user = "samcheung";
-		dataDir = "~/Syncthing/"
+		dataDir = "/home/samcheung/Syncthing";
 	};
 	
 }
