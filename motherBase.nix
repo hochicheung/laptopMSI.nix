@@ -17,6 +17,19 @@
 
   networking.hostName = "MotherBase"; 
 
+
+	# Allow Unfree
+	nixpkgs.config.allowUnfree = true;
+	
+  environment.systemPackages = with pkgs; [
+		git	
+		qutebrowser
+		keepassxc
+		vim
+		emacs
+		syncthing
+	]; 
+
   # X11
   services.xserver.enable = true;
   services.xserver.layout = "us";
@@ -26,15 +39,11 @@
 	# Pulseaudio
 	hardware.pulseaudio.enable = true;
 
-	# Allow Unfree
-	nixpkgs.config.allowUnfree = true;
-	
-  environment.systemPackages = [
-				pkgs.qutebrowser
-				pkgs.rclone
-				pkgs.discord
-				pkgs.mupdf
-				pkgs.keepassxc
-	]; 
+	# Syncthing
+	services.syncthing = {
+	  enable = true;
+	  user = "samcheung";
+		dataDir = "/home/samcheung/Syncthing";
+	};
 }
 
