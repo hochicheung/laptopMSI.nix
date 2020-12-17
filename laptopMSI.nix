@@ -19,12 +19,12 @@
 		syncthing
 	];
 
-	fonts.fonts = with pkgs; [
-	  (nerdfonts.override {fonts = [ "FiraCode" "3270" "ProggyClean"]; })
-		noto-fonts
-		noto-fonts-cjk
-		fira-code
-	];
+	#fonts.fonts = with pkgs; [
+	  #(nerdfonts.override {fonts = [ "FiraCode" "3270" "ProggyClean"]; })
+		#noto-fonts
+		#noto-fonts-cjk
+		#fira-code
+	#];
 
 	# Backlight control
 	programs.light.enable = true;
