@@ -9,7 +9,6 @@
     [ 
       ./hardware-configuration.nix
 			./laptopMSI.nix
-			#./motherBase.nix
 			<home-manager/nixos>
     ];
 
