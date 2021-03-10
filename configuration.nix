@@ -9,7 +9,6 @@
     [ 
       ./hardware-configuration.nix
 			./laptopMSI.nix
-			<home-manager/nixos>
     ];
 
 	# Don't use swap unless ram is full
