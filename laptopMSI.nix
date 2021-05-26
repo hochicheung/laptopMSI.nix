@@ -26,6 +26,15 @@
 	services.xserver.libinput.touchpad.tapping = true;
 	services.xserver.libinput.touchpad.disableWhileTyping  = true;
 
+	# Graphics Driver
+	services.xserver.videoDrivers = ["nvidia"];
+
+	hardware.nvidia.prime = {
+		sync.enable = true;
+		nvidiaBusId = "PCI:1:0:0";
+		intelBusId = "PCI:0:2:0";
+	};
+
 	# X11
 	services.xserver.enable = true;
 	services.xserver.layout = "us";
