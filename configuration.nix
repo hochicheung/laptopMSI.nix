@@ -29,6 +29,8 @@
 		home = "/home/samcheung";
 		extraGroups = ["wheel" "networkmanager" "video"];
 	};
+	users.users.localtimed.group = "localtimed";
+	users.groups.localtimed = {};
 
 	# Nix garbage collector
 	nix.gc.automatic = true;

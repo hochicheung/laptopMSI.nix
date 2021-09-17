@@ -1,16 +1,17 @@
+
 { config, pkgs, ... }:
 
 {
-	# Use the systemd-boot EFI boot loader.
-	boot.loader.systemd-boot.enable = true;
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
 
-	networking.hostName = "MSILaptop";
+  networking.hostName = "MSILaptop"; 
 
 	# Allow Unfree
 	nixpkgs.config.allowUnfree = true;
 
-	environment.systemPackages = with pkgs; [
-		git
+  environment.systemPackages = with pkgs; [
+		git	
 		chromium
 		keepassxc
 		vim
@@ -21,25 +22,16 @@
 	# Backlight control
 	programs.light.enable = true;
 
-	# Touchpad
-	services.xserver.libinput.enable = true;
+  # Touchpad
+  services.xserver.libinput.enable = true;
 	services.xserver.libinput.touchpad.tapping = true;
 	services.xserver.libinput.touchpad.disableWhileTyping  = true;
 
-	# Graphics Driver
-	services.xserver.videoDrivers = ["nvidia"];
-
-	hardware.nvidia.prime = {
-		sync.enable = true;
-		nvidiaBusId = "PCI:1:0:0";
-		intelBusId = "PCI:0:2:0";
-	};
-
-	# X11
-	services.xserver.enable = true;
-	services.xserver.layout = "us";
-	services.xserver.xkbVariant = "altgr-intl";
-	services.xserver.xkbOptions = "caps:escape";
+  # X11
+  services.xserver.enable = true;
+  services.xserver.layout = "us";
+  services.xserver.xkbVariant = "altgr-intl";
+  services.xserver.xkbOptions = "caps:escape";
 
 	# Pulseaudio
 	hardware.pulseaudio.enable = true;
